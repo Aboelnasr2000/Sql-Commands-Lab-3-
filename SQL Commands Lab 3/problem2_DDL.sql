@@ -1,0 +1,10 @@
+CREATE DATABASE library;
+ CREATE TABLE Book(Book_ID int PRIMARY KEY AUTO_INCREMENT, Title varchar(20) , Price Float(30) , Pub_ID int , Category_ID int);
+ CREATE TABLE Category(Category_ID int PRIMARY KEY AUTO_INCREMENT , Name varchar(20));
+ CREATE TABLE Publisher(Pub_ID int PRIMARY KEY AUTO_INCREMENT , Name varchar(20) , Address text(40));
+ CREATE TABLE Member(Member_ID int PRIMARY KEY AUTO_INCREMENT , Name varchar(20) , Address text(40) , Join_Date datetime );
+ ALTER TABLE book ADD FOREIGN KEY (Pub_ID) REFERENCES publisher (Pub_ID) ON DELETE RESTRICT ON UPDATE CASCADE ; 
+ ALTER TABLE book ADD FOREIGN KEY (Category_ID) REFERENCES category (Category_ID) ON DELETE RESTRICT ON UPDATE CASCADE ;
+ CREATE TABLE Borrowing_Book ( Member_ID int , Book_ID int , Borrow_Date datetime , Due_Date datetime  , return_date datetime , PRIMARY KEY (Member_ID , Book_ID , Borrow_Date ));
+ ALTER TABLE borrowing_book ADD FOREIGN KEY (Member_ID) REFERENCES member (Member_ID) ON DELETE RESTRICT ON UPDATE CASCADE ;
+ ALTER TABLE borrowing_book ADD FOREIGN KEY (Book_ID) REFERENCES book (Book_ID) ON DELETE RESTRICT ON UPDATE CASCADE ;

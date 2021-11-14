@@ -1,0 +1,100 @@
+1 )
+SELECT member.name FROM `member` WHERE Join_Date > '2000-9-1'
+
+
+Name	
+Mariane Hegmann	
+Ericka Rice	
+Margaretta Effertz	
+Prof. Brett Turner	
+Eunice Purdy	
+Connie Dickens	
+Ciara Hessel	
+Mr. Daron Carter Jr.	
+Presley Swaniawski	
+Tamia Kautzer	
+Chesley Rodriguez	
+Prof. Ray O'Connell	
+Prof. Gerald Price	
+Benny Mitchell	
+Domenic Casper	
+Rylan Cummerata	
+Herman Dach	
+
+2)
+SELECT * FROM `member` WHERE Join_Date > '1995-10-1' AND Join_Date < '2019-10-1';
+
+
+Member_ID	Name	Address	Join_Date	
+3	Mariane Hegmann	02651 Hipolito Ford Apt. 144
+Lake Arden, ID 37085-...	2011-06-01	
+4	Ericka Rice	447 Bradtke Mission Apt. 112
+Schadenmouth, LA 6557...	2014-04-23	
+6	Margaretta Effertz	405 Constance Row Apt. 992
+New Dorian, NJ 46795	2016-09-10	
+11	Prof. Brett Turner	35675 Jessica Springs
+Port Della, NY 82118-7428	2015-03-10	
+17	Connie Dickens	161 Nia Lane
+East Myra, LA 19349	2006-07-15	
+18	Ciara Hessel	73279 Lehner Forks
+Port Michaelatown, VT 71256	2006-12-02	
+19	Kane Parker I	25314 Naomie Mission
+West Amie, UT 94743	1996-08-23	
+20	Mr. Daron Carter Jr.	97787 Schuppe Crossing Suite 230
+New Myrtice, NM 6...	2007-10-05	
+22	Presley Swaniawski	0381 Karl Landing
+East Johann, ND 96968-3266	2017-01-31	
+24	Mohamed Rempel	80889 Bernhard Wells
+East Sheila, DC 02535	1996-07-13	
+25	Tamia Kautzer	729 Kilback Springs Apt. 709
+Shakirashire, AR 7802...	2018-07-11	
+26	Prof. Kitty Romaguer	7443 Sporer Hills
+New Hazlehaven, TN 62783-3058	2000-05-23	
+27	Chesley Rodriguez	016 Douglas Cliffs Suite 320
+Nedrabury, TX 25757-0...	2014-08-16	
+28	Scot Reinger	414 McCullough Square
+Lake Tracystad, DE 93855	1995-11-12	
+34	Prof. Ray O'Connell	627 Edwardo Lights Suite 989
+Port Vadachester, VT ...	2012-05-11	
+35	Prof. Gerald Price	0907 Buckridge Mountain Apt. 919
+Morissettefort, W...	2003-12-01	
+39	Benny Mitchell	57007 Gusikowski Gardens Suite 805
+East Dockshire,...	2003-07-01	
+40	Domenic Casper	6269 Melvina Flats
+Ryanchester, LA 54030-9264	2012-10-27	
+48	Rylan Cummerata	8841 Zetta Curve Suite 196
+New Cassidy, WY 98133-9...	2008-09-25	
+50	Herman Dach	9700 Zieme Lane Suite 151
+Tiaramouth, SD 17056-995...	2014-11-10	
+
+3)
+SELECT * FROM book , publisher WHERE book.Pub_ID = publisher.Pub_ID AND ( publisher.Name = 'Oxford' or book.Price > 15 and book.Price < 20 );
+
+
+Book_ID	Title	Price	Pub_ID	Category_ID	Pub_ID	Name	Address	
+1	Hamlet	19.5	2	3	2	Grady, Walter and Bi	2379 Wisoky Field Apt. 761
+Port Orie, FL 97905-486...	
+2	Macbeth	19.5	3	3	3	Kihn-Abernathy	9359 Gabe Burgs Suite 728
+West Maxborough, OH 6701...	
+4	Introduction To Algo	15.5	2	2	2	Grady, Walter and Bi	2379 Wisoky Field Apt. 761
+Port Orie, FL 97905-486...	
+5	Cracking the code in	15.5	2	2	2	Grady, Walter and Bi	2379 Wisoky Field Apt. 761
+Port Orie, FL 97905-486...	
+
+
+4)
+SELECT book.Title FROM member , borrowing_book , book WHERE book.Book_ID= borrowing_book.Book_ID AND member.Member_ID = borrowing_book.Member_ID and member.Name = 'Scot Reinger';
+
+
+Title	
+harry potter and the	
+Stay with me	
+
+5)
+SELECT member.name FROM member , borrowing_book WHERE member.Member_ID = borrowing_book.Member_ID and borrowing_book.Borrow_Date > '2018-12-31' and borrowing_book.Borrow_Date < '2020-1-1';
+
+
+name	
+Prof. Brett Turner	
+Ciara Hessel	
+Dedrick Daugherty	

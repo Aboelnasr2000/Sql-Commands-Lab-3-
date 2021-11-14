@@ -1,0 +1,5 @@
+1) Error " Cannot delete or update a parent row: a foreign key constraint fails (`companys`.`employee`, CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`Dno`) REFERENCES `department` (`Dnumber`) ON UPDATE CASCADE) " - restricts delete as the Dnumber is refrenced in the employee table .
+
+2) Error " Cannot add or update a child row: a foreign key constraint fails (`companys`.`project`, CONSTRAINT `project_ibfk_1` FOREIGN KEY (`Dno`) REFERENCES `department` (`Dnumber`) ON UPDATE CASCADE)" - restricts adding new tuple as the Dno entered isn't in the Department Table 
+
+3) You need to remove all realtions between tables and add atleast 1 in each and then re add realtions this will allow others to fall on these utill updated with new values.
